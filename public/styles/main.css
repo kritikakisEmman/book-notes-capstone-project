@@ -1,0 +1,251 @@
+/* --------------------
+   Base
+---------------------*/
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #d0d0d0;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.8;
+
+  background:
+    radial-gradient(
+      ellipse at top,
+      #1a1f1a 0%,
+      #0a0a0a 55%,
+      #000 100%
+    );
+  min-height: 100vh;
+}
+
+main {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  
+}
+
+/* --------------------
+   Navbar
+---------------------*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #1e3a1e;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #7CFF7C;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.nav-links h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #7CFF7C;
+  text-shadow: 0 0 12px rgba(124, 255, 124, 0.35);
+  letter-spacing: 0.04em;
+  font-family: Georgia, serif;
+}
+
+.nav-search input {
+  background: #000;
+  border: 1px solid #222;
+  color: #d0d0d0;
+  padding: 0.3rem 0.5rem;
+}
+
+/* --------------------
+   Sorting
+---------------------*/
+#sorting-section {
+  margin-bottom: 2rem;
+  font-family: monospace;
+  color: #888;
+}
+
+#sorting-section select,
+#sorting-section button {
+  background: #000;
+  color: #7CFF7C;
+  border: 1px solid #222;
+}
+
+/* --------------------
+   Book Tile
+---------------------*/
+.book-tile {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #1e2a1e;
+}
+
+.book-tile img {
+  width: 110px;
+  height: auto;
+  object-fit: cover;
+  filter: grayscale(10%);
+}
+
+/* --------------------
+   Book Info
+---------------------*/
+.book-info {
+  flex: 1;
+}
+
+.book-info h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #9fdcff;
+}
+
+.book-info h3 {
+  margin: 0.3rem 0 0.8rem;
+  font-size: 1rem;
+  color: #aaa;
+  font-weight: normal;
+}
+
+.book-info small {
+  display: block;
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: #7CFF7C;
+  margin-bottom: 0.6rem;
+}
+
+.book-info p {
+  margin: 0;
+  color: #ccc;
+}
+
+/* --------------------
+   Footer
+---------------------*/
+footer {
+  text-align: center;
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #444;
+  padding: 2rem 0;
+}
+
+.add-book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 500px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border: 1px solid #1e3a1e;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.add-book-form h2 {
+  margin: 0 0 1.5rem;
+  color: #7CFF7C;
+  font-size: 1.3rem;
+  text-shadow: 0 0 10px rgba(124, 255, 124, 0.3);
+  letter-spacing: 0.03em;
+}
+
+.add-book-form label {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.8rem;
+}
+
+.add-book-form input,
+.add-book-form textarea,
+.add-book-form select {
+  background: #080808;
+  border: 1px solid #222;
+  color: #d0d0d0;
+  padding: 0.5rem 0.7rem;
+  font-family: Georgia, serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.add-book-form input:focus,
+.add-book-form textarea:focus {
+  border-color: #3a6b3a;
+}
+
+.add-book-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.add-book-form button[type="submit"] {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.5rem;
+  background: transparent;
+  border: 1px solid #7CFF7C;
+  color: #7CFF7C;
+  font-family: monospace;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  align-self: flex-start;
+}
+
+.add-book-form button[type="submit"]:hover {
+  background: rgba(124, 255, 124, 0.08);
+  box-shadow: 0 0 8px rgba(124, 255, 124, 0.2);
+}
+.nav-search{
+  position: relative;
+}
+#search-results{
+  position: absolute;
+  top:100%;
+  right: 0;
+  width: 300px;
+  background: #000;
+  border: 1px solid #0f0;
+  z-index: 1000;
+}
+.search-item {
+  display: flex;
+  gap: 0.5em;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.search-item:hover {
+  background: rgba(0, 255, 0, 0.1);
+}
+
+.delete-btn {
+  color: #ff4d4d;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.delete-btn:hover {
+  text-shadow: 0 0 6px red;
+}

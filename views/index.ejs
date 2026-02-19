@@ -1,0 +1,35 @@
+<%-include("partials/header.ejs")%>
+    <main>
+
+    <section id="sorting-section">
+        <form action="/" method="GET">
+            <label for="sorting-options">Sort By:</label>
+            <select id="sorting-options" name="sortingOptions" >
+                <option value="rating" <%=sortingValue ==="rating"?"selected":""%>>Rating</option>
+                <option value="title" <%=sortingValue ==="title"?"selected":""%>>Title</option>
+                <option value="date" <%=sortingValue ==="date"?"selected":""%>>Date</option>
+            </select>
+            <button type="submit"> GO! </button>
+        </form>
+    </section>
+    <% books.forEach(book=>{%>
+        <article class="book-tile">
+          
+            <img class="book-tile-image" src="<%= book.coverUrl %>" alt="Book cover">
+          
+      
+      
+
+      <div class="book-info">
+        <h2 class="book-title"><%= book.title %></h2>
+        <h3 class="book-author"><%= book.author %></h3>
+        <small class="book-rating-and-date">
+          ⭐ <%= book.rating %> / 5 — Read on <%= book.dateRead %>
+        </small>
+        <p><%= book.review %></p>
+        <button class="delete-btn" data-id="<%= book.id %>"> Delete </button>
+      </div>
+    </article>
+       <%})%>
+    </main> 
+   <%-include("partials/footer.ejs")%>

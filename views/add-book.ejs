@@ -1,0 +1,25 @@
+<%-include("partials/header.ejs")%>
+<main>
+  <form class="add-book-form" action="/add" method="POST">
+
+    <h2>Add Book</h2>
+
+    <input type="hidden" name="work_key" value="<%= book.work_key %>">
+    <input type="hidden" name="cover_id" value="<%= book.cover_id %>">
+
+    <label>Title</label>
+    <input name="title" value="<%= book.title %>">
+
+    <label>Author</label>
+    <input name="author" value="<%= book.author %>">
+
+    <label>Review</label>
+    <textarea name="review"></textarea>
+
+    <label>Rating (1–5)</label>
+    <input type="number" name="rating" min="1" max="5">
+
+    <button type="submit">Save</button>
+  </form>
+</main>
+<%-include("partials/footer.ejs")%>
