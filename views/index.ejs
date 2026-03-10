@@ -24,7 +24,7 @@
         <h2 class="book-title"><%= book.title %></h2>
         <h3 class="book-author"><%= book.author %></h3>
         <small class="book-rating-and-date">
-          ⭐ <%= book.rating %> / 5 — Read on <%= book.dateRead %>
+          ⭐ <%= book.rating %> / 5 — Read on <%= new Date(book.dateRead).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }) %>
         </small>
         <p><%= book.review %></p>
         <button class="delete-btn" data-id="<%= book.id %>"> Delete </button>
